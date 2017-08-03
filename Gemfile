@@ -7,6 +7,7 @@ end
 
 # Devise
 gem 'devise'
+gem 'devise-bootstrap-views', '~> 0.0.11'
 # Jquery
 gem 'jquery-rails', '4.3.1'
 # Bootstrap

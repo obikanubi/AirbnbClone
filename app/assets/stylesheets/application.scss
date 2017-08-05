@@ -30,3 +30,13 @@
 	border-bottom: 2px solid #FF5A5F;
 	}
 }
+
+/* avatar */
+.nav-avatar {
+	border-radius: 100%;
+	-moz-border-radius: 100%;
+    -webkit-border-radius: 100%;
+    overflow: hidden;
+    height: 20px;
+    width: 20px;
+}

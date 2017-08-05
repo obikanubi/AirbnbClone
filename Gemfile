@@ -4,7 +4,8 @@ git_source(:github) do |repo_name|
   repo_name = "#{repo_name}/#{repo_name}" unless repo_name.include?("/")
   "https://github.com/#{repo_name}.git"
 end
-
+# Image uploader Paperclip
+gem "paperclip", "~> 5.0.0"
 # Devise
 gem 'devise'
 gem 'devise-bootstrap-views', '~> 0.0.11'

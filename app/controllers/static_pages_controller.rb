@@ -1,6 +1,7 @@
 class StaticPagesController < ApplicationController
   before_action :authenticate_user!
   def home
+    @user = User.all
   end
 
   def about
@@ -10,6 +11,6 @@ class StaticPagesController < ApplicationController
   end
   
   def profile
-  	@username = params[:id]
+  	@user = User.find_by(username:(params[:id]))
   end
 end

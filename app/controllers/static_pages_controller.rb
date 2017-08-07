@@ -1,7 +1,7 @@
 class StaticPagesController < ApplicationController
   before_action :authenticate_user!
   def home
-    @user = User.all
+    @rooms = Room.all
   end
 
   def about

@@ -18,6 +18,9 @@
     <tr>
       <td> Beds: <%= room.beds %> </td>
     </tr>
+    <tr>
+      <td> <%= link_to "View", room_path(room) %></td>
+    </tr>
   </table>
   <br>
 <% end %>

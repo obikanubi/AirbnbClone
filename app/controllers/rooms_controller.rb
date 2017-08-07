@@ -4,7 +4,8 @@ class RoomsController < ApplicationController
   # GET /rooms
   # GET /rooms.json
   def index
-    @rooms = Room.all
+    @user = current_user
+    @rooms = @user.rooms.all
   end
 
   # GET /rooms/1
@@ -29,6 +30,7 @@ class RoomsController < ApplicationController
 
     respond_to do |format|
       if @room.save
+        current_user.update_attribute :admin, true
         format.html { redirect_to @room, notice: 'Room was successfully created.' }
         format.json { render :show, status: :created, location: @room }
       else

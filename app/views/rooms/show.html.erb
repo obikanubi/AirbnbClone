@@ -20,5 +20,23 @@
   <%= @room.beds %>
 </p>
 
+<div class="row">
+  <div class="small-2 large-2 columns">
+    <%= imdb_style_rating_for @room, current_user%>
+  </div>
+  <br>
+  <div class="small-2 large-4 columns">
+    <% if current_user %>
+      Cleanliness: <%= rating_for @room, "cleanliness", stars: 10 %>
+      <br>
+      Location: <%= rating_for @room, "location", stars: 10  %>
+      <br>
+      Host: <%= rating_for @room, "host", stars: 10  %>
+      <br>
+      Design: <%= rating_for @room, "design", stars: 10  %>
+    <% end %>
+  </div>
+</div>
+
 <%= link_to 'Edit', edit_room_path(@room) %> |
 <%= link_to 'Back', rooms_path %>

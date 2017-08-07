@@ -1,23 +1,24 @@
 <h1>Home</h1>
+<% @rooms.each do |room| %>
+  <table>
+    <tr>
+      <td> Room name: </td>
+      <td> <%= room.room_name %> </td>
+    </tr>
+    <tr>
+      <td> Description: </td>
+      <td> <%= room.description %> </td>
+    </tr>
+    <tr>
+      <td> Room Details </td>
+    </tr>
+    <tr>
+      <td> Bedrooms: <%= room.bedrooms %> </td>
+    </tr>
+    <tr>
+      <td> Beds: <%= room.beds %> </td>
+    </tr>
+  </table>
+  <br>
+<% end %>
 
-<table>
-  <tr>
-    <% @rooms.each do |room| %>
-    <td> Room name: </td>
-    <td> <%= room.room_name %> </td>
-  </tr>
-  <tr>
-    <td> Description: </td>
-    <td> <%= room.description %> </td>
-  </tr>
-  <tr>
-    <td> Room Details </td>
-  </tr>
-  <tr>
-    <td> Bedrooms: <%= room.bedrooms %> </td>
-  </tr>
-  <tr>
-    <td> Beds: <%= room.beds %> </td>
-  </tr>
-  <% end %>
-</table>

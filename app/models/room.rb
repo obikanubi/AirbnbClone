@@ -1,9 +1,7 @@
 class Room < ApplicationRecord
 	belongs_to :user
-	ratyrate_rateable 'cleanliness', 
-					  'location', 
-					  'host', 
-					  'design'
+	ratyrate_rateable 'room_rating'
+
 	validates :room_name, 
 			  :description, 
 			  :bedrooms, 

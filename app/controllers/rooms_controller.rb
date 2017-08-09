@@ -32,7 +32,7 @@ class RoomsController < ApplicationController
     respond_to do |format|
       if @room.save
         current_user.update_attribute :admin, true
-        format.html { redirect_to @room, notice: 'Room was successfully created.' }
+        format.html { redirect_to @room, notice: 'Your room is now up and ready for grabs.' }
         format.json { render :show, status: :created, location: @room }
       else
         format.html { render :new }
@@ -46,7 +46,7 @@ class RoomsController < ApplicationController
   def update
     respond_to do |format|
       if @room.update(room_params)
-        format.html { redirect_to @room, notice: 'Room was successfully updated.' }
+        format.html { redirect_to @room, notice: 'You have successfully updated your room.' }
         format.json { render :show, status: :ok, location: @room }
       else
         format.html { render :edit }
@@ -73,6 +73,6 @@ class RoomsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def room_params
-      params.require(:room).permit(:room_name, :description, :bedrooms, :beds)
+      params.require(:room).permit(:room_name, :address, :description, :bedrooms, :beds, :latitude, :longitude)
     end
 end

@@ -6,6 +6,11 @@
 </p>
 
 <p>
+  <strong>Address:</strong>
+  <%= @room.address %>
+</p>
+
+<p>
   <strong>Description:</strong>
   <%= @room.description %>
 </p>
@@ -28,5 +33,9 @@
   </div>
 </div>
 
-<%= link_to 'Edit', edit_room_path(@room) %> |
-<%= link_to 'Back', rooms_path %>
+<%= image_tag "https://maps.googleapis.com/maps/api/staticmap?size=400x300&markers=#{@room.latitude}%2C#{@room.longitude}" %>
+<br>
+<% if current_user.admin? %>
+  <%= link_to 'Edit', edit_room_path(@room) %>|
+  <%= link_to 'Back', rooms_path %>
+<% end %>
